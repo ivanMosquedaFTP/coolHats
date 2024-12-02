@@ -7,7 +7,7 @@ $accion = (isset($_GET['accion']))?$_GET['accion'] : NULL;
 $id=(isset($_GET['id']))?$_GET['id']:null;
 switch ($accion) {
     case 'crear': {
-        include 'views/rol/crear.php';
+        include(__DIR__.'/views/rol/crear.php');
         break;
     }
 
@@ -23,13 +23,13 @@ switch ($accion) {
         }
 
         $roles = $app->readAll();
-        include('views/rol/index.php');
+        include(__DIR__.'/views/rol/index.php');
         break;
     }
 
     case 'actualizar': {
         $roles = $app -> readOne($id); 
-        include('views/rol/crear.php');
+        include(__DIR__.'/views/rol/crear.php');
         break;
     }
     
@@ -44,7 +44,7 @@ switch ($accion) {
             $tipo="danger";
         }
         $roles = $app->readAll();
-        include('views/rol/index.php');
+        include(__DIR__.'/views/rol/index.php');
         break;
     }
 
@@ -62,16 +62,16 @@ switch ($accion) {
             }
         }
         $roles = $app->readAll();
-        include('views/rol/index.php');
+        include(__DIR__.'/views/rol/index.php');
         break;
     }
 
     default: {
         $roles = $app->readAll();
-        include 'views/rol/index.php';
+        include(__DIR__.'/views/rol/index.php');
         break;
     }
 }
 
-require_once('views/footer.php');
+require_once(__DIR__.'/views/footer.php');
 ?>
