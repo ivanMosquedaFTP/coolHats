@@ -7,7 +7,7 @@ $id=(isset($_GET['id']))?$_GET['id']:null;
 switch ($accion) {
     case 'crear': {
         $app -> checkRole('administrador');
-        include 'views/producto/crear.php';
+        include(__DIR__.'/views/producto/crear.php');
         break;
     }
 
@@ -24,14 +24,14 @@ switch ($accion) {
         }
 
         $productos = $app->readAll();
-        include('views/producto/index.php');
+        include(__DIR__.'/views/producto/index.php');
         break;
     }
 
     case 'actualizar': {
         $app -> checkRole('administrador');
         $productos = $app -> readOne($id); 
-        include('views/producto/crear.php');
+        include(__DIR__.'/views/producto/crear.php');
         break;
     }
     
@@ -49,7 +49,7 @@ switch ($accion) {
 
                 $tipo = "danger";
                 $mensaje = "Error al procesar la imagen.";
-                include 'views/producto/index.php';
+                include(__DIR__.'/views/producto/index.php');
                 break;
             }
     
@@ -63,7 +63,7 @@ switch ($accion) {
         }
 
         $productos = $app->readAll();
-        include 'views/producto/index.php';
+        include(__DIR__.'/views/producto/index.php');
         break;
     }
 
@@ -82,19 +82,20 @@ switch ($accion) {
             }
         }
         $productos = $app->readAll();
-        include('views/producto/index.php');
+        include(__DIR__.'/views/producto/index.php');
         break;
     }
 
     case 'descripcion': {
         $producto = $app -> readOne($id); 
-        include('views/producto/descripcion.php');
+        include(__DIR__.'/views/producto/descripcion.php');
         break;
     }
 
     default: {
         $productos = $app->readAll();
         include 'views/producto/index.php';
+        include(__DIR__.'/views/producto/index.php');
         break;
     }
 }
