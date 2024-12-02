@@ -10,7 +10,7 @@ $id=(isset($_GET['id']))?$_GET['id']:null;
 switch ($accion) {
     case 'crear': {
         $usuarios = $appUsuario -> readAll();
-        include 'views/recompensa/crear.php';
+        include(__DIR__.'/views/recompensa/crear.php');
         break;
     }
 
@@ -26,14 +26,14 @@ switch ($accion) {
         }
 
         $recompensas = $app->readAll();
-        include('views/recompensa/index.php');
+        include(__DIR__.'/views/recompensa/index.php');
         break;
     }
 
     case 'actualizar': {
         $recompensas = $app -> readOne($id); 
         $usuarios = $appUsuario -> readAll();
-        include('views/recompensa/crear.php');
+        include(__DIR__.'/views/recompensa/crear.php');
         break;
     }
     
@@ -48,7 +48,7 @@ switch ($accion) {
             $tipo="danger";
         }
         $recompensas = $app->readAll();
-        include('views/recompensa/index.php');
+        include(__DIR__.'/views/recompensa/index.php');
         break;
     }
 
@@ -66,13 +66,13 @@ switch ($accion) {
             }
         }
         $recompensas = $app->readAll();
-        include('views/recompensa/index.php');
+        include(__DIR__.'/views/recompensa/index.php');
         break;
     }
 
     default: {
         $recompensas = $app->readAll();
-        include 'views/recompensa/index.php';
+        include(__DIR__.'/views/recompensa/index.php');
         break;
     }
 }
