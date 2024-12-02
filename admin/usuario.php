@@ -17,7 +17,7 @@ switch ($accion) {
         $roles = $appRole -> readAll();
         $misRoles = $app -> readAllRoles($id);
 
-        include 'views/usuario/crear.php';
+        include (__DIR__. '/views/usuario/crear.php');
         break;
     }
 
@@ -37,7 +37,7 @@ switch ($accion) {
         }
 
         $usuarios = $app->readAll();
-        include('views/usuario/index.php');
+        include(__DIR__.'/views/usuario/index.php');
         break;
     }
 
@@ -55,7 +55,7 @@ switch ($accion) {
             $mensaje = "El usuario no ha sido dado de alta";
             $tipo = "danger";
         }
-        include("../index.php");
+        include(__DIR__ . "/../index.php");
 
         break;
     }
@@ -74,7 +74,7 @@ switch ($accion) {
             $mensaje = "El usuario no ha sido dado de alta";
             $tipo = "danger";
         }
-        include("../index.php");
+        include(__DIR__ . "/../index.php");
 
         break;
     }
@@ -85,7 +85,7 @@ switch ($accion) {
         $roles = $appRole -> readAll();
         $misRoles = $app -> readAllRoles($id);
 
-        include('views/usuario/crear.php');
+        include(__DIR__.'/views/usuario/crear.php');
         break;
     }
     
@@ -101,7 +101,7 @@ switch ($accion) {
             $tipo="danger";
         }
         $usuarios = $app->readAll();
-        include('views/usuario/index.php');
+        include(__DIR__.'/views/usuario/index.php');
         break;
     }
 
@@ -120,13 +120,14 @@ switch ($accion) {
             }
         }
         $usuarios = $app->readAll();
-        include('views/usuario/index.php');
+        include(__DIR__.'/views/usuario/index.php');
         break;
     }
 
     default: {
         $usuarios = $app->readAll();
         include 'views/usuario/index.php';
+        include(__DIR__.'/views/usuario/index.php');
         break;
     }
 }
