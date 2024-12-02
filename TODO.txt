@@ -1,0 +1,5 @@
+remove index references in all documents
+add image to producto table
+fix venta crud
+validate that at least one role is selected at usuario/views/crear.php
+manage everything in within a transaction

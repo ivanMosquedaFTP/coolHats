@@ -1,0 +1,33 @@
+.card {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-img-container {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-img-container img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+.card-body {
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.card-title {
+    font-size: 1rem;
+}
+
+.card-text {
+    font-size: 0.85rem;
+}
