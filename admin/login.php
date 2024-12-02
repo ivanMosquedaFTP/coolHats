@@ -6,17 +6,17 @@
 
   switch ($accion) {
     case 'register': {
-      include('views/register/index.php');
+      include(__DIR__.'/views/register/index.php');
       break;
     }
 
     case 'preLogin': {
-      include('views/login/index.php');
+      include(__DIR__.'/views/login/index.php');
       break;
     }
 
     case 'preCreate': {
-      include('views/register/index.php');
+      include(__DIR__.'/views/register/index.php');
       break;
     }
 
@@ -27,15 +27,15 @@
         $mensaje = "Bienvenido al sistema";
         $tipo = "success";
         $app -> checkRole('administrador');
-        require_once('views/header/headerAdministrador.php');
+        require_once(__DIR__.'/views/header/headerAdministrador.php');
         $app -> alerta($tipo, $mensaje);
         //TODO:plantillas personalizadas de Bienvenida
       } else {
         $mensaje = "email o contrasena equivocados, <a href='login.php'>[presione aqui para volver a intentar]</a>";
         $tipo = "danger";
-        require_once('views/header.php');
+        require_once(__DIR__.'/views/header.php');
         $app -> alerta($tipo, $mensaje);
-        require_once('views/footer.php');
+        require_once(__DIR__.'/views/footer.php');
       }
 
       break;
@@ -44,10 +44,10 @@
     case 'logout': {$app -> logout(); break;}
     
     default: {
-      include('views/login/index.php');
+      include(__DIR__.'/views/login/index.php');
       break;
     }
   }
 
-  require_once('views/footer.php');
+  require_once(__DIR__.'/views/footer.php');
 ?>
