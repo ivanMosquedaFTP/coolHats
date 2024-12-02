@@ -1,4 +1,4 @@
-<?php require('admin/views/headerFromDocumentRoot.php');?>
+<?php require(__DIR__ . '/admin/views/headerFromDocumentRoot.php');?>
 <center>
   <main>
     <section class="carousel">
@@ -57,8 +57,8 @@
     </section>
 
     <div class="b-example-divider"></div>
-    <?php require('admin/views/registerUserSnippet.php');?>
+    <?php require(__DIR__ . '/admin/views/registerUserSnippet.php');?>
     <br>
   </main>
 </center>
-<?php require('admin/views/footerFromDocumentRoot.php');?>
+<?php require(__DIR__ . '/admin/views/footerFromDocumentRoot.php');?>
